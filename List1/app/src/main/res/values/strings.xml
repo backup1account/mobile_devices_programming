@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">List1</string>
+    <string name="app_question">Pytanie</string>
+    <string name="true_answer">TAK</string>
+    <string name="false_answer">NIE</string>
+    <string name="app_cheat">OSZUKUJ</string>
+    <string name="information"/>
+    <string name="search_button">Wyszukaj</string>
+</resources>

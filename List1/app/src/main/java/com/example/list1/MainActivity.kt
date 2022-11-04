@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("showAnswerCheat", questions[count]!![1])
             startActivity(intent)
         }
-        showQuestion.text = questions[0]!![0]
+        showQuestion.text = questions[count]!![0]
     }
 
 

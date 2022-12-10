@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">List3</string>
+    <string name="addlist">addlist</string>
+    <string name="additem_dialog">Add element</string>
+    <string name="add_item">add item</string>
+    <string name="delete_item">delete item</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="change_exercise_info">Change exercise info</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="add_element_button">add element button</string>
+    <string name="add_exercise_info">Add exercise info</string>
+    <string name="add_image">add image</string>
+</resources>

@@ -15,8 +15,8 @@ interface TaskListDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertItem(item: TaskList)
 
-//    @Query("UPDATE tasklist_table SET image_path = :path WHERE :item")
-//    fun addImage(item: TaskList, path: String)
+    @Query("UPDATE tasklist_table SET image_path = :path WHERE uid = :itemId")
+    fun addImage(itemId: Int, path: String)
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     @JvmSuppressWildcards

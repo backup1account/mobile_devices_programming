@@ -1,10 +1,12 @@
 package com.example.list3
 
+import android.net.Uri
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -24,6 +26,11 @@ class TaskListRecyclerViewAdapter(
         val item = getItem(position)
         holder.bind(item.title, item.description)
 
+        if (item.imgPath != null) {
+            val imgUri = Uri.parse(item.imgPath)
+            holder.imageView.setImageURI(imgUri)
+        }
+
         holder.itemView.setOnClickListener {
             onItemClicked.onItemClick(item)
         }
@@ -37,7 +44,7 @@ class TaskListRecyclerViewAdapter(
         private val titleView: TextView = itemView.findViewById(R.id.list_title)
         private val contentView: TextView = itemView.findViewById(R.id.list_description)
 
-//        val imageView: ImageView = itemView.findViewById(R.id.submitted_img)
+        val imageView: ImageView = itemView.findViewById(R.id.submitted_img)
         val addImgBtn: Button = itemView.findViewById(R.id.submit_img_btn)
 
         fun bind(title: String?, description: String?) {

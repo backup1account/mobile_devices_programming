@@ -2,7 +2,9 @@ package com.example.list3
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
@@ -33,6 +35,8 @@ class TaskListFragment : Fragment(), OnItemClickListener {
     private lateinit var viewImg: View
     private lateinit var imageView: ImageView
 
+    private var itemId: Int? = null
+
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
 
@@ -57,7 +61,13 @@ class TaskListFragment : Fragment(), OnItemClickListener {
         ) { result ->
             if (result.resultCode == RESULT_OK) {
                 val data: Intent? = result.data
-                Log.d("a", "${data?.data}")
+                val uri: Uri? = data?.data
+
+                Thread {
+                    listsViewModel.addImage(itemId!!, uri.toString())
+                }.start()
+
+                Log.d("a", "${uri.toString()} $itemId")
             }
         }
 
@@ -86,8 +96,9 @@ class TaskListFragment : Fragment(), OnItemClickListener {
     }
 
     override fun onImageButtonClick(item: TaskList) {
-//        val i = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-//        resultLauncher.launch(i)
+        val i = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        itemId = item.uid
+        resultLauncher.launch(i)
     }
 
     companion object {

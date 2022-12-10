@@ -16,11 +16,6 @@ class ExercisesRepository(private val exercisesDao: ExercisesDAO) {
     }
 
     @WorkerThread
-    fun insertListOfExercises(list: List<Exercises>) {
-        exercisesDao.insertListOfExercises(list)
-    }
-
-    @WorkerThread
     fun updateExercise(title: String, description: String, uid: Int) {
         exercisesDao.updateExercise(title, description, uid)
     }
@@ -28,10 +23,5 @@ class ExercisesRepository(private val exercisesDao: ExercisesDAO) {
     @WorkerThread
     fun deleteExercise(item: Exercises) {
         exercisesDao.deleteExercise(item)
-    }
-
-    @WorkerThread
-    fun deleteAllExercises() {
-        exercisesDao.deleteAllExercises()
     }
 }

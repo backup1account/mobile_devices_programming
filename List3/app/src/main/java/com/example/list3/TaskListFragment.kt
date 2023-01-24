@@ -76,7 +76,7 @@ class TaskListFragment : Fragment(), OnItemClickListener {
         listsViewModel.allTasklists.observe(viewLifecycleOwner) { lists ->
             lists?.let { myAdapter.submitList(it) }
         }
-x
+
         return view
     }
 

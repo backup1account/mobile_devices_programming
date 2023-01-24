@@ -32,9 +32,6 @@ class TaskListFragment : Fragment(), OnItemClickListener {
         TaskListViewModelFactory((activity?.application as ApplicationMain).repository)
     }
 
-    private lateinit var viewImg: View
-    private lateinit var imageView: ImageView
-
     private var itemId: Int? = null
 
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
@@ -53,9 +50,6 @@ class TaskListFragment : Fragment(), OnItemClickListener {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_task_list_list, container, false)
 
-        viewImg = inflater.inflate(R.layout.fragment_task_list, container, false)
-        imageView = viewImg.findViewById(R.id.submitted_img)
-
         resultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { result ->
@@ -66,8 +60,6 @@ class TaskListFragment : Fragment(), OnItemClickListener {
                 Thread {
                     listsViewModel.addImage(itemId!!, uri.toString())
                 }.start()
-
-                Log.d("a", "${uri.toString()} $itemId")
             }
         }
 
@@ -84,7 +76,7 @@ class TaskListFragment : Fragment(), OnItemClickListener {
         listsViewModel.allTasklists.observe(viewLifecycleOwner) { lists ->
             lists?.let { myAdapter.submitList(it) }
         }
-
+x
         return view
     }
 

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:name="com.example.list4.CapitalCityFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="40dp"
+            app:layoutManager="LinearLayoutManager"
+            tools:context=".CapitalCityFragment"
+            tools:listitem="@layout/fragment_capital_city">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:id="@+id/country_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/country"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:layout_marginTop="@dimen/text_margin"
+                android:layout_marginStart="@dimen/text_margin"
+                android:layout_marginEnd="@dimen/text_margin"
+                android:layout_marginBottom="@dimen/text_margin"/>
+        <TextView
+                android:id="@+id/capital_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/capital_city"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:layout_marginTop="@dimen/text_margin"
+                android:layout_marginStart="@dimen/text_margin"
+                android:layout_marginEnd="@dimen/text_margin"
+                android:layout_marginBottom="@dimen/text_margin"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:id="@+id/error_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:layout_marginTop="@dimen/text_margin"
+                android:layout_marginStart="@dimen/text_margin"
+                android:layout_marginEnd="@dimen/text_margin"
+                android:layout_marginBottom="@dimen/text_margin"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

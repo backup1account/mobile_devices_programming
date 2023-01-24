@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">List4</string>
+    <string name="capital_city">Capital city</string>
+    <string name="country">Country</string>
+</resources>
